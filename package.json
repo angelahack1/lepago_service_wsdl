@@ -1,0 +1,21 @@
+{
+  "name": "lepago_service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "clean": "(if exist node_modules rd /s /q node_modules) && (if exist .next rd /s /q .next) && (if exist out rd /s /q out)"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "http": "^0.0.1-security",
+    "fs": "^0.0.1-security",
+    "lepago_service": "file:",
+    "nodemon": "^3.1.10"
+  },
+  "description": ""
+}

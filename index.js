@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 const PORT_REST = 3000
+const PORT_WSDL = 30000
 const app = express();
 app.use(bodyParser.raw({ type: () => true, limit: '5mb' }));
 
@@ -17,5 +18,5 @@ app.get('/wsdl-rest', (req, res) => {
 const server = http.createServer(app);
 
 server.listen(PORT_REST, () => {
-  console.log('WSDL is accessible via REST at http://localhost:'+PORT_REST+'/wsdl-rest');
+  console.log('WSDL is accessible via REST at http://localhost:'+PORT_WSDL+'/wsdl-rest');
 });

@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: lepagodeployment-wsdl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lepagodeployment-wsdl
+      instance: "1"
+  template:
+    metadata:
+      labels:
+        app: lepagodeployment-wsdl
+        instance: "1"
+    spec:
+      containers:
+      - name: wsdl
+        image: wsdl:1.0
+        env:
+        - name: WSDL_SERVICE_PORT
+          value: "3000"
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lepagoservice-wsdl
+  namespace: default  
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 30000
+    targetPort: 3000
+  selector:
+    app: lepagodeployment-wsdl
+---
+# lepagoservice-ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lepagoservice-ingress
+  namespace: default
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/service: lepagoservice-wsdl@kubernetescrd
+spec:
+  rules:
+  - host: lepagoservice.com
+    http:
+      paths:
+      - path: /wsdl-rest
+        pathType: Prefix
+        backend:
+          service:
+            name: lepagoservice-wsdl  # Any existing service
+            port: 
+              number: 30000

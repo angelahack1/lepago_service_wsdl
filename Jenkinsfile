@@ -16,13 +16,6 @@ pipeline {
             }
         }
 
-        stage('Build Project') {
-            steps {
-                echo '--- Building the project ---'
-                bat 'npm run build'
-            }
-        }
-
         stage('Deploy to Kubernetes') {
             steps {
                 echo '--- Deploying to Kubernetes ---'

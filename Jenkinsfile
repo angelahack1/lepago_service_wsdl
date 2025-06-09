@@ -6,13 +6,20 @@ pipeline {
             steps {
                 echo '--- Cleaning the project ---'
                 bat 'kubectl delete -f nodeportwsdl.yaml --ignore-not-found=true'
+                bat 'pause 10'
+                bat 'kubectl delete -f nodeportwsdl.yaml --ignore-not-found=true'
+                bat 'pause 10'
+                bat 'docker image rm -f wsdl:1.0 2>nul || exit 0'
+                bat 'pause 10'
+                bat 'docker image rm -f wsdl:1.0 2>nul || exit 0'
+                bat 'npm run clean_windows 2>nul || exit 0'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Build Docker Image') {
             steps {
-                echo '--- Installing project dependencies ---'
-                bat 'npm install'
+                echo '--- Building the Docker image ---'
+                bat 'docker build -t wsdl:1.0 .'
             }
         }
 

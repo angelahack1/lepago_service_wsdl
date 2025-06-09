@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "clean": "(if exist node_modules rd /s /q node_modules) && (if exist .next rd /s /q .next) && (if exist out rd /s /q out)"
+    "clean_windows": "(if exist node_modules rd /s /q node_modules) && (if exist .next rd /s /q .next) && (if exist out rd /s /q out)"
   },
   "author": "",
   "license": "ISC",

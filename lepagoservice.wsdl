@@ -1,5 +1,5 @@
 <definitions name="LepagoService"
-  targetNamespace="http://www.example.org/lepagoservice"
+  targetNamespace="http://www.example.org/lepagoservice/"
   xmlns:tns="http://www.example.org/lepagoservice"
   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -74,7 +74,7 @@
     <operation name="loginReg">
       <soap:operation soapAction="http://www.example.org/lepagoservice#loginReg"/>
       <input>
-        <soap:body use="literal" namespace="http://www.example.org/lepagoservice"/>
+        <soap:body use="literal" namespace="http://www.example.org/lepagoservice/"/>
       </input>
       <output>
         <soap:body use="literal"/>
@@ -86,8 +86,7 @@
     <operation name="loginReq">
       <soap:operation soapAction="http://www.example.org/lepagoservice#loginReq"/>
       <input>
-        <soap:body use="literal"/>
-        <soap:body use="literal"/>
+        <soap:body use="literal"  namespace="http://www.example.org/lepagoservice/"/>
       </input>
       <output>
         <soap:body use="literal"/>
@@ -96,8 +95,7 @@
     <operation name="challengeResp">
       <soap:operation soapAction="http://www.example.org/lepagoservice#challengeResp"/>
       <input>
-        <soap:body use="literal"/>
-        <soap:body use="literal"/>
+        <soap:body use="literal"  namespace="http://www.example.org/lepagoservice/"/>
       </input>
       <output>
         <soap:body use="literal"/>
@@ -106,8 +104,7 @@
     <operation name="train">
       <soap:operation soapAction="http://www.example.org/lepagoservice#train"/>
       <input>
-        <soap:body use="literal"/>
-        <soap:body use="literal"/>
+        <soap:body use="literal"  namespace="http://www.example.org/lepagoservice/"/>
       </input>
       <output>
         <soap:body use="literal"/>
@@ -116,8 +113,8 @@
     <operation name="imAlive">
       <soap:operation soapAction="http://www.example.org/lepagoservice#imAlive"/>
       <input>
-        <soap:body use="literal"/>
-        <soap:body use="literal"/>
+        <soap:body use="literal"  namespace="http://www.example.org/lepagoservice/"/>
+        <soap:body use="literal"  namespace="http://www.example.org/lepagoservice/"/>
       </input>
       <output>
         <soap:body use="literal"/>

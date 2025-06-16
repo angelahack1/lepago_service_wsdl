@@ -131,7 +131,7 @@
   </binding>
   <service name="LepagoService">
     <port name="LepagoPort" binding="tns:LepagoBinding">
-      <soap:address location="http://192.168.1.10:32000/lepagoservice"/>
+      <soap:address location="http://192.168.1.9:32000/lepagoservice"/>
     </port>
   </service>
 </definitions> 

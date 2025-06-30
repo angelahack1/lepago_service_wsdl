@@ -18,5 +18,5 @@ app.get('/wsdl-rest', (req, res) => {
 const server = http.createServer(app);
 
 server.listen(PORT_REST, () => {
-  console.log('WSDL Entry point v 0.25.0 (2025-06-08 at 18:54 hrs.) is accessible via REST at http://localhost:'+PORT_WSDL+'/wsdl-rest');
+  console.log('WSDL Entry point v 0.27.0 (2025-06-29 at 18:13 hrs.) is accessible via REST at http://localhost:'+PORT_WSDL+'/wsdl-rest');
 });

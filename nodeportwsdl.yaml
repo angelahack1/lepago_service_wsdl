@@ -55,6 +55,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: web
     traefik.ingress.kubernetes.io/service: lepagoservice-wsdl@kubernetescrd
 spec:
+  ingressClassName: nginx
   rules:
   - host: lepagoservice.com
     http:

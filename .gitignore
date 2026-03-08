@@ -121,3 +121,6 @@ dist
 
 # Windows
 Thumbs.db
+
+# package-lock.json
+package-lock.json
